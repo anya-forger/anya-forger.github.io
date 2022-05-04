@@ -16,11 +16,12 @@ const about = [
     "I am studing in Cecile Hall at Eden Academy.",
     "",
     "This summer I went to NTNU CSIE Camp to learn how to code.",
-    "During the camp, I learned how to use " +
-        "the most useful language JavaScript, " +
-        "the famous front-end framework Vue and Tailwind, " +
-        "the most popular back-end framework Node.js, " +
-        "and Python AI Gaming Agent.",
+    "During the camp, I learned how to: ",
+    "  - Build SPA Website with frontend framework Vue and Tailwind.",
+    "  - Develop efficiently with Node.js ecosystem.",
+    "  - Design and develop a gomoku gaming agent with Python.",
+    "  - Operate Linux system with common commands.",
+    "  - Use Git and GitHub to work on projects.",
     "",
     'By the way, I am starring in an anime called "SPY x FAMILY". Did you watch it?',
 ].join("\n");
