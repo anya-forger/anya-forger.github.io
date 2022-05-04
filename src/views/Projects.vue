@@ -34,5 +34,9 @@ function random_text(length = 32) {
                 />
             </div>
         </div>
+        <div class="opacity-0">
+            I'm so cute!<br />
+            Waku Waku!
+        </div>
     </div>
 </template>

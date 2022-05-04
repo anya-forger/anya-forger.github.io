@@ -1,5 +1,5 @@
 <script setup>
-import anya from "../anya";
+import { pic } from "../anya";
 import Typing from "../components/Typing.vue";
 </script>
 <template>
@@ -8,9 +8,13 @@ import Typing from "../components/Typing.vue";
         <Typing text="Hello! Welcome to my website!" :delay="1200" :speed="60" />
         <div class="w-full overflow-hidden drop-shadow-2xl">
             <img
-                :src="anya.casual_large"
+                :src="pic.casual_large"
                 class="-translate-y-0 scale-[200%] md:-translate-y-20 md:scale-150 lg:-translate-y-32 lg:scale-125"
             />
+        </div>
+        <div class="opacity-0">
+            I'm so cute!<br />
+            Waku Waku!
         </div>
     </div>
 </template>

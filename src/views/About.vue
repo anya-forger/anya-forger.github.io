@@ -1,8 +1,14 @@
 <script setup>
 import { ref } from "vue";
-import anya from "../anya";
+import { pic, about } from "../anya";
 import Typing from "../components/Typing.vue";
 
+function open(url) {
+    window.open(url, "_blank");
+}
+</script>
+
+<script>
 let show_pic = ref(false);
 setTimeout(() => {
     show_pic.value = true;
@@ -10,16 +16,13 @@ setTimeout(() => {
 
 let T = ref(0);
 let timer_id = setInterval(() => {
-    T.value = T.value += 20;
+    T.value = T.value += 25;
     if (T.value >= 30_000) {
         clearInterval(timer_id);
     }
-}, 20);
-
-function open() {
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
-}
+}, 25);
 </script>
+
 <template>
     <div class="h-full w-full px-8 pt-8 sm:px-12 sm:pt-12 lg:px-16 lg:pt-16">
         <Typing text="About Me" class="mb-8 block text-2xl sm:text-3xl lg:text-4xl" />
@@ -34,29 +37,31 @@ function open() {
                 leave-to-class="transform opacity-0 translate-x-12"
             >
                 <img
-                    :src="anya.icecream"
+                    :src="pic.icecream"
                     class="inline-block w-64 p-4 drop-shadow-lg md:w-96"
                     v-if="show_pic"
                 />
             </transition>
             <Typing
-                :text="
-                    [
-                        'My name is Anya Forger. I am 6 years old now!',
-                        'I am studing in Cecile Hall at Eden Academy.',
-                        '',
-                        'By the way, I am staring in a new anime called SPY x FAMILY.',
-                    ].join('\n')
-                "
+                :text="about"
                 :delay="1000"
                 :speed="40"
                 class="flex-1 md:mx-4"
-                @click="open"
+                @click="open('https://spy-family.net/')"
             />
         </div>
-        <Typing v-if="T > 7200" text="My Pictures" :speed="50" class="text-lg" />
+        <Typing
+            v-if="T > 1500 + about.length * 40"
+            text="My Pictures"
+            :speed="50"
+            class="mt-4 block text-lg"
+        />
         <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
-            <div v-for="i in 40" :key="i">
+            <div
+                v-for="i in 40"
+                :key="i"
+                class="m-2 overflow-hidden rounded-full ring-fuchsia-400 transition-all hover:ring-4"
+            >
                 <transition
                     enter-active-class="duration-200 ease-out"
                     enter-from-class="transform opacity-0 translate-y-6"
@@ -65,10 +70,18 @@ function open() {
                     leave-from-class="opacity-100 translate-y-0"
                     leave-to-class="transform opacity-0 translate-y-6"
                 >
-                    <img v-if="T > 7600 + i * 100" :src="anya[`icon_${i}`]" class="w-full p-2" />
+                    <img
+                        v-if="T > 2000 + about.length * 40 + i * 100"
+                        :src="pic[`avatar_${i}`]"
+                        class="w-full cursor-pointer transition-all hover:scale-125"
+                        @click="open('https://spy-family.net/special/special13.php')"
+                    />
                 </transition>
             </div>
         </div>
-        <div class="opacity-0">I'm so cute!</div>
+        <div class="opacity-0">
+            I'm so cute!<br />
+            Waku Waku!
+        </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import anya from "../anya";
+import { pic } from "../anya";
 
 const links = [
     { text: "Anya", url: "/" },
@@ -31,7 +31,7 @@ const links = [
             <div
                 v-for="(link, index) in links"
                 :key="index"
-                class="flex h-16 w-20 items-center justify-center sm:w-24"
+                class="mx-2 flex h-16 items-center justify-center sm:w-24"
             >
                 <router-link
                     :to="link.url"
@@ -54,7 +54,7 @@ const links = [
                 v-if="$route.path !== '/about'"
             >
                 <img
-                    :src="anya.uniform"
+                    :src="pic.uniform"
                     class="w-full translate-y-12 scale-[180%] transition-all duration-200 hover:rounded-xl hover:pt-5 md:translate-y-14 md:hover:pt-7"
                 />
             </div>
