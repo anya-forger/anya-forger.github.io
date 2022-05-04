@@ -28,4 +28,28 @@ const about = [
     'By the way, I am starring in an anime called "SPY x FAMILY". Did you watch it?',
 ].join("\n");
 
-export { pic, about };
+const projects = [
+    {
+        name: "My Portfolio Website",
+        description: "A portfolio website for myself that I developed in NTNU CSIE Camp.",
+        image: "https://spy-family.net/assets/img/special/wall02.jpg",
+        skills: ["Vue", "Tailwind", "Node.js", "GitHub"],
+        url: "https://github.com/anya-forger/anya-forger.github.io",
+    },
+    {
+        name: "AI Gomoku Gaming Agent",
+        description: "A gomoku gaming agent with Python that I designed in NTNU CSIE Camp.",
+        image: "https://spy-family.net/assets/img/special/wall01.jpg",
+        skills: ["Python", "Algorithm", "Gomoku"],
+        url: "https://github.com/anya-forger",
+    },
+    {
+        name: "SPY x FAMILY",
+        description: "An anime that I starred in.",
+        image: "https://spy-family.net/assets/img/special/special10_1.gif",
+        skills: ["Performings"],
+        url: "https://spy-family.net",
+    },
+];
+
+export { pic, titles, about, projects };
