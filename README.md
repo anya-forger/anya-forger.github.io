@@ -30,3 +30,14 @@ Now, you should be able to visit the website at `http://localhost:3000`.
 The built website will be placed in `dist/`.
 
 And you can use `pnpm preview` (`npm run preview`) to preview the built website in your browser.
+
+## Tech Stack
+
+- [![][icon-vue] Vue 3](https://vuejs.org/) (JS Framework)
+- [![][icon-tailwind] TailwindCSS](https://tailwindcss.com/) (CSS Framework)
+- Vue Router (SPA Router)
+- [![][icon-vite] Vite](https://vitejs.dev/) (Dev Server, Bundler)
+
+[icon-vue]: https://api.iconify.design/logos:vue.svg
+[icon-tailwind]: https://api.iconify.design/logos:tailwindcss-icon.svg
+[icon-vite]: https://api.iconify.design/logos:vitejs.svg
