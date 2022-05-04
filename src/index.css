@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "FakePearl", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    @apply relative;
+}
+
+html,
+body,
+#app {
+    @apply m-0 h-full w-full p-0;
+}
+
+#app {
+    @apply fixed top-0 left-0 bg-violet-100;
+}
+
+@font-face {
+    font-family: FakePearl;
+    font-display: swap;
+    src: url(https://cdn.jsdelivr.net/gh/max32002/FakePearl@1.1/webfont/FakePearl-Regular.woff2)
+            format("woff2"),
+        url(https://cdn.jsdelivr.net/gh/max32002/FakePearl@1.1/webfont/FakePearl-Regular.woff)
+            format("woff");
+}

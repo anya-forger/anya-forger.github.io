@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "name": "anya-forger",
+    "version": "0.0.0",
+    "author": {
+        "name": "JacobLinCool",
+        "email": "hi@jacoblin.cool",
+        "url": "https://github.com/JacobLinCool"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier --write 'src/**/*.{js,css,vue}' --ignore-path .gitignore"
+    },
+    "dependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+        "vue": "^3.2.25",
+        "vue-router": "4",
+        "vue-starport": "^0.2.10"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^2.3.1",
+        "autoprefixer": "^10.4.7",
+        "postcss": "^8.4.13",
+        "prettier": "^2.6.2",
+        "prettier-plugin-tailwindcss": "^0.1.10",
+        "tailwindcss": "^3.0.24",
+        "vite": "^2.9.5"
+    }
+}
