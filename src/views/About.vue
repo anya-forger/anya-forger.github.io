@@ -45,7 +45,7 @@ let timer_id = setInterval(() => {
             <Typing
                 :text="about"
                 :delay="1000"
-                :speed="40"
+                :speed="30"
                 class="flex-1 md:mx-4"
                 @click="open('https://spy-family.net/')"
             />
