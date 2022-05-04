@@ -2,9 +2,11 @@
 
 An Example Website made for Modern Web Development Guided Project, one of the courses in NTNU CSIE Camp 2022.
 
-> Disclaimer
+> DISCLAIMER
+>
 > All the images are from [SPY x FAMILY](https://spy-family.net/).
-> We do not own the rights to the images, and only use them for educational purposes.
+>
+> We do not own the rights to the images and only use them for educational purposes.
 
 ## Setup
 
