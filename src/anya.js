@@ -11,6 +11,8 @@ for (let i = 1; i <= 40; i++) {
         .padStart(2, "0")}.png`;
 }
 
+const titles = ["First-Grade Student", "Test Subject 007", "Telepath"];
+
 const about = [
     "My name is Anya Forger. I am 6 years old now!",
     "I am studing in Cecile Hall at Eden Academy.",
