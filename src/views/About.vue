@@ -51,7 +51,7 @@ let timer_id = setInterval(() => {
             />
         </div>
         <Typing
-            v-if="T > 1500 + about.length * 40"
+            v-if="T > 1500 + about.length * 30"
             text="My Pictures"
             :speed="50"
             class="mt-4 block text-lg"
@@ -71,7 +71,7 @@ let timer_id = setInterval(() => {
                     leave-to-class="transform opacity-0 translate-y-6"
                 >
                     <img
-                        v-if="T > 2000 + about.length * 40 + i * 100"
+                        v-if="T > 2000 + about.length * 30 + i * 100"
                         :src="pic[`avatar_${i}`]"
                         class="w-full cursor-pointer transition-all hover:scale-125"
                         @click="open('https://spy-family.net/special/special13.php')"
