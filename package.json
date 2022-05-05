@@ -19,13 +19,16 @@
         "vue-starport": "^0.2.10"
     },
     "devDependencies": {
+        "@iconify-json/mdi": "^1.1.9",
         "@trivago/prettier-plugin-sort-imports": "^3.2.0",
         "@vitejs/plugin-vue": "^2.3.1",
+        "@vue/compiler-sfc": "^3.2.33",
         "autoprefixer": "^10.4.7",
         "postcss": "^8.4.13",
         "prettier": "^2.6.2",
         "prettier-plugin-tailwindcss": "^0.1.10",
         "tailwindcss": "^3.0.24",
+        "unplugin-icons": "^0.14.3",
         "vite": "^2.9.5"
     }
 }
