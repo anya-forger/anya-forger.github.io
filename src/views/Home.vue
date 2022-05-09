@@ -12,6 +12,8 @@ let timer_id = setInterval(() => {
         clearInterval(timer_id);
     }
 }, 100);
+
+const width = screen.width;
 </script>
 <template>
     <div class="w-full overflow-y-auto px-8 pt-16 sm:px-12 sm:pt-20 lg:px-16 lg:pt-24">
@@ -48,7 +50,7 @@ let timer_id = setInterval(() => {
                     leave-to-class="transform opacity-0 translate-y-12 md:translate-x-12"
                 >
                     <img
-                        v-if="T > 5400"
+                        v-show="T > (width >= 768 ? 1200 : 5400)"
                         :src="pic.casual_large"
                         class="-translate-y-0 scale-[200%] md:-translate-y-20 md:scale-150 lg:-translate-y-32 lg:scale-125"
                     />
