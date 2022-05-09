@@ -10,9 +10,6 @@ function open(url) {
 
 <script>
 let show_pic = ref(false);
-setTimeout(() => {
-    show_pic.value = true;
-}, 400);
 
 let T = ref(0);
 let timer_id = setInterval(() => {
@@ -39,7 +36,8 @@ let timer_id = setInterval(() => {
                 <img
                     :src="pic.icecream"
                     class="inline-block w-64 p-4 drop-shadow-lg md:w-96"
-                    v-if="show_pic"
+                    @load="show_pic = true"
+                    v-show="T > 600 && show_pic"
                 />
             </transition>
             <Typing
@@ -58,7 +56,7 @@ let timer_id = setInterval(() => {
         />
         <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
             <div
-                v-for="i in 40"
+                v-for="i in pic.avatars.length - 1"
                 :key="i"
                 class="m-2 overflow-hidden rounded-full ring-fuchsia-400 transition-all hover:ring-4"
             >
@@ -71,10 +69,10 @@ let timer_id = setInterval(() => {
                     leave-to-class="transform opacity-0 translate-y-6"
                 >
                     <img
-                        v-if="T > 2000 + about.length * 30 + i * 100"
-                        :src="pic[`avatar_${i}`]"
+                        v-show="T > 2000 + about.length * 30 + i * 100"
+                        :src="pic.avatars[i]"
                         class="w-full cursor-pointer transition-all hover:scale-125"
-                        @click="open('https://spy-family.net/special/special13.php')"
+                        @click="open('https://spy-family.net/#tSpecial')"
                     />
                 </transition>
             </div>
