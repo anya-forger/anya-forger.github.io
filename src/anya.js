@@ -3,13 +3,18 @@ const pic = {
     icecream: "https://spy-family.net/assets/img/common/header_bottomimg_3_family.png",
     uniform_large: "https://spy-family.net/assets/img/top/chara_anya_1.png",
     casual_large: "https://spy-family.net/assets/img/top/chara_anya_2.png",
+    avatars: [],
 };
 
 for (let i = 1; i <= 40; i++) {
-    pic[`avatar_${i}`] = `https://spy-family.net/assets/img/special/anya/${i
+    pic.avatars[i] = `https://spy-family.net/assets/img/special/anya/${i
         .toString()
         .padStart(2, "0")}.png`;
 }
+pic.avatars.push("https://spy-family.net/assets/img/special/episode4/02.png");
+pic.avatars.push("https://spy-family.net/assets/img/special/episode4/05.png");
+pic.avatars.push("https://spy-family.net/assets/img/special/episode5/01.png");
+pic.avatars.push("https://spy-family.net/assets/img/special/episode5/02.png");
 
 const titles = ["First-Grade Student", "Test Subject 007", "Telepath"];
 
