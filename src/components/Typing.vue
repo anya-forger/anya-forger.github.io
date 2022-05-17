@@ -8,16 +8,20 @@ const props = defineProps({
     delay: { type: Number, default: 0 },
 });
 
+const emit = defineEmits(["waiting", "typing", "done"]);
+
 let current_length = 0;
 let timer_id = 0;
 let show_cursor = ref(false);
 let current_text = ref("");
 
 setTimeout(start, props.delay);
+emit("waiting");
 
 function start() {
     show_cursor.value = true;
     timer_id = setInterval(update, props.speed);
+    emit("typing");
 }
 
 function update() {
@@ -30,6 +34,7 @@ function update() {
 function done() {
     show_cursor.value = false;
     clearInterval(timer_id);
+    emit("done");
 }
 </script>
 
