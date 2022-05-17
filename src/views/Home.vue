@@ -5,39 +5,36 @@ import MdiInstagram from "~icons/mdi/instagram";
 import { pic, titles } from "../anya";
 import Typing from "../components/Typing.vue";
 
-let T = ref(0);
-let timer_id = setInterval(() => {
-    T.value = T.value += 100;
-    if (T.value >= 30_000) {
-        clearInterval(timer_id);
-    }
-}, 100);
-
+let step = ref(0);
 const width = screen.width;
 </script>
 <template>
     <div class="w-full overflow-y-auto px-8 pt-16 sm:px-12 sm:pt-20 lg:px-16 lg:pt-24">
         <div class="flex w-full flex-col md:flex-row">
             <div class="w-full md:w-1/2">
-                <Typing text="Anya Forger" class="mb-2 block text-2xl sm:text-3xl lg:text-4xl" />
-                <Typing v-if="T > 1200" :text="titles.join(', ')" :speed="60" />
+                <Typing
+                    text="Anya Forger"
+                    @done="step++"
+                    class="mb-2 block text-2xl sm:text-3xl lg:text-4xl"
+                />
+                <Typing v-if="step > 0" @done="step++" :text="titles.join(', ')" :speed="60" />
                 <a
-                    v-if="T > 4000"
+                    v-if="step > 1"
                     class="mt-8 flex items-center text-lg text-gray-500 transition-all hover:text-gray-700"
                     href="https://github.com/anya-forger"
                     target="_blank"
                 >
                     <MdiGithub class="mr-1 inline-block" />
-                    <Typing v-if="T > 4000" text="GitHub" :speed="60" />
+                    <Typing v-if="step > 1" @done="step++" text="GitHub" :speed="60" />
                 </a>
                 <a
-                    v-if="T > 4600"
+                    v-if="step > 2"
                     class="mt-4 flex items-center text-lg text-gray-500 transition-all hover:text-gray-700"
                     href="https://www.instagram.com/spy_family_official/"
                     target="_blank"
                 >
                     <MdiInstagram class="mr-1 inline-block" />
-                    <Typing v-if="T > 4600" text="Instagram" :speed="60" />
+                    <Typing v-if="step > 2" @done="step++" text="Instagram" :speed="60" />
                 </a>
             </div>
             <div class="w-full overflow-hidden drop-shadow-2xl">
@@ -50,7 +47,7 @@ const width = screen.width;
                     leave-to-class="transform opacity-0 translate-y-12 md:translate-x-12"
                 >
                     <img
-                        v-show="T > (width >= 768 ? 1200 : 5400)"
+                        v-show="step > (width >= 768 ? 0 : 3)"
                         :src="pic.casual_large"
                         class="-translate-y-0 scale-[200%] md:-translate-y-20 md:scale-150 lg:-translate-y-32 lg:scale-125"
                     />

@@ -6,23 +6,22 @@ import Typing from "../components/Typing.vue";
 function open(url) {
     window.open(url, "_blank");
 }
-</script>
 
-<script>
 let show_pic = ref(false);
+let step = ref(0);
 
-let T = ref(0);
-let timer_id = setInterval(() => {
-    T.value = T.value += 25;
-    if (T.value >= 30_000) {
-        clearInterval(timer_id);
-    }
-}, 25);
+function update(delay = 0) {
+    setTimeout(() => step.value++, delay);
+}
 </script>
 
 <template>
     <div class="h-full w-full px-8 pt-8 sm:px-12 sm:pt-12 lg:px-16 lg:pt-16">
-        <Typing text="About Me" class="mb-8 block text-2xl sm:text-3xl lg:text-4xl" />
+        <Typing
+            text="About Me"
+            @done="step++"
+            class="mb-8 block text-2xl sm:text-3xl lg:text-4xl"
+        />
 
         <div class="flex w-full flex-col justify-end md:flex-row-reverse">
             <transition
@@ -37,21 +36,23 @@ let timer_id = setInterval(() => {
                     :src="pic.icecream"
                     class="inline-block w-64 p-4 drop-shadow-lg md:w-96"
                     @load="show_pic = true"
-                    v-show="T > 600 && show_pic"
+                    v-show="step > 0 && show_pic"
                 />
             </transition>
             <Typing
                 :text="about"
-                :delay="1000"
-                :speed="30"
+                :speed="25"
+                v-if="step > 0"
+                @done="step++"
                 class="flex-1 md:mx-4"
                 @click="open('https://spy-family.net/')"
             />
         </div>
         <Typing
-            v-if="T > 1500 + about.length * 30"
             text="My Pictures"
             :speed="50"
+            v-if="step > 1"
+            @done="step++"
             class="mt-4 block text-lg"
         />
         <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
@@ -67,9 +68,10 @@ let timer_id = setInterval(() => {
                     leave-active-class="duration-150 ease-in"
                     leave-from-class="opacity-100 translate-y-0"
                     leave-to-class="transform opacity-0 translate-y-6"
+                    @enter="update(50)"
                 >
                     <img
-                        v-show="T > 2000 + about.length * 30 + i * 100"
+                        v-show="step > 1 + i"
                         :src="pic.avatars[i]"
                         class="w-full cursor-pointer transition-all hover:scale-125"
                         @click="open('https://spy-family.net/#tSpecial')"
