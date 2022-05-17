@@ -11,10 +11,14 @@ for (let i = 1; i <= 40; i++) {
         .toString()
         .padStart(2, "0")}.png`;
 }
-pic.avatars.push("https://spy-family.net/assets/img/special/episode4/02.png");
-pic.avatars.push("https://spy-family.net/assets/img/special/episode4/05.png");
-pic.avatars.push("https://spy-family.net/assets/img/special/episode5/01.png");
-pic.avatars.push("https://spy-family.net/assets/img/special/episode5/02.png");
+pic.avatars.push(
+    "https://spy-family.net/assets/img/special/episode4/02.png",
+    "https://spy-family.net/assets/img/special/episode4/05.png",
+    "https://spy-family.net/assets/img/special/episode5/01.png",
+    "https://spy-family.net/assets/img/special/episode5/02.png",
+    "https://spy-family.net/assets/img/special/episode6/03.png",
+    "https://spy-family.net/assets/img/special/episode6/05.png",
+);
 
 const titles = ["First-Grade Student", "Test Subject 007", "Telepath"];
 
