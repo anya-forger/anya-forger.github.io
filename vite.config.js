@@ -12,11 +12,15 @@ export default defineConfig({
             workbox: {
                 runtimeCaching: [
                     {
-                        urlPattern: ({ url }) => url.origin === "https://spy-family.net",
+                        urlPattern: ({ url }) =>
+                            ["https://spy-family.net", "https://cdn.jsdelivr.net"].includes(
+                                url.origin,
+                            ),
                         handler: "StaleWhileRevalidate",
                         options: { cacheName: "external-spy-images" },
                     },
                 ],
+                skipWaiting: true,
             },
         }),
     ],
