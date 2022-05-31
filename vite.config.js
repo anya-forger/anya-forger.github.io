@@ -10,6 +10,7 @@ export default defineConfig({
         Icons({ autoInstall: true, compiler: "vue3" }),
         VitePWA({
             workbox: {
+                cleanupOutdatedCaches: true,
                 runtimeCaching: [
                     {
                         urlPattern: ({ url }) =>
@@ -17,7 +18,10 @@ export default defineConfig({
                                 url.origin,
                             ),
                         handler: "StaleWhileRevalidate",
-                        options: { cacheName: "external-spy-images" },
+                        options: {
+                            cacheName: "external-sources",
+                            expiration: { maxAgeSeconds: 7 * 24 * 60 * 60 },
+                        },
                     },
                 ],
                 skipWaiting: true,
