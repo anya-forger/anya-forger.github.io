@@ -26,6 +26,13 @@ pic.avatars.push(
     "https://spy-family.net/assets/img/special/episode10/02.png",
     "https://spy-family.net/assets/img/special/episode10/03.png",
     "https://spy-family.net/assets/img/special/episode10/04.png",
+    "https://spy-family.net/assets/img/special/episode11/01.png",
+    "https://spy-family.net/assets/img/special/episode11/02.png",
+    "https://spy-family.net/assets/img/special/episode11/03.png",
+    "https://spy-family.net/assets/img/special/episode11/04.png",
+    "https://spy-family.net/assets/img/special/episode11/06.png",
+    "https://spy-family.net/assets/img/special/episode12/03.png",
+    "https://spy-family.net/assets/img/special/episode12/06.png",
 );
 
 const titles = ["First-Grade Student", "Test Subject 007", "Telepath"];
